@@ -9,7 +9,195 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .maincontent
-        +image('content/user.jpg', 'user-pic')
-        +icon('link', 'link-class')
-        .icon-bg
+      .first-section
+        section.hero
+          .container
+            header.header
+              .header__logo
+                .logo 
+                  +image("content/logo.png", "logo-pic")
+              .header__nav
+                nav.menu
+                  - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                  ul.menu__list
+                    each item in items
+                      li.menu__item
+                        a(href="").menu__link #{item}
+              .header__socials
+                - var icons = ["insta", "vk", "github"];
+                ul.socials__list
+                  each icon in icons
+                    li.socials__item
+                      a(href="").socials__link
+                        +icon(icon, "socials__icon")
+
+            .hero__main
+              .author__info
+                .author__info-title Личный сайт веб разработчика
+                .autor__info-name Полина Совершенная
+
+            .hero__scroll
+              a(href="").hero__scroll-title Скролл
+              
+
+        section.about
+          .container
+            .about-me
+              .about-me__left
+                .about-me__photo
+                  .about-me__avatar.avatar
+                    +image("content/user.jpg", "avatar__photo")
+                .about-me__info
+                  -
+                    var myinfo = [
+                      ["Проживаю:", "Сочи"],
+                      ["Возраст:", "24 года"],
+                      ["Родился:", "27 декабря 1995"]
+                    ];
+                  table.about-me__table
+                    tbody.about-me__table-content
+                      each item in myinfo
+                        tr
+                          td #{item[0]}
+                          td.about-me__table--bold #{item[1]}
+
+              .about-me__right
+                .about-me__greeting Привет, меня зовут
+                h2.about-me__title Полина Совершенная
+                .about-me__text
+                  p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about-me__ps
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+      section.skills
+        .triangles.skills__triangles
+          svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
+            polygon(points="0,0 0,100 1000,100")
+          svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
+            polygon(points="1000,0 1000,100 0,100")            
+
+<!--first-section-->
+
+        .skills__section
+          .container.skills-container
+            .skills__picture
+              +image("content/backpack.png", "skills__picture-img") 
+            .skills__content
+              .skills__desc
+                h3.skills__title Чем я могу быть полезен вам
+                p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .skills__desk
+                -
+                  var items = [
+                    ["Frontend", ["HTML5", "CSS3", "JavaScript", "Jquery и Vue.js"]],
+                    ["Backend", ["GIT", "Terminal", "Gulp", "Webpack"]]
+                  ];
+
+                ul.skills__list
+                  each item in items
+                    li.skills__list-item.skills__type 
+                      .skills__type-title #{item[0]}
+                      ul.skills__type-list
+                        each skill in item[1]
+                          li.skills__type-item
+                            .skill
+                              .skill__circle
+                              .skill__circle
+                              .skill__title= skill
+
+
+        .triangles.reviews__triangles
+          svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
+            polygon(points="0,0 0,100 1000,100")
+          svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
+            polygon(points="1000,0 1000,100 0,100")
+
+<!--skills-->
+
+      .last-section
+        section.reviews
+          .container.reviews-section
+            .last-section__wrapper
+              .reviews__top
+                h3.reviews__title.left__title Что обо мне говорят
+                .reviews__btns
+                  button.reviews-button.reviews__btns-prev 
+                  button.reviews-button.reviews__btns-next 
+              .reviews__content
+                .reviews__slider
+
+                  -
+                    var reviews = [
+                      ["Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                      "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
+                      ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                      "content/sab.png", "Владимир Сабанцев", "Преподаватель"]   
+                    ];
+
+                  ul.reviews__list
+                    each item in reviews
+                      li.reviews__list-item
+                        p #{item[0]}
+                        .reviews__autor
+                          .reviews__photo
+                            .reviews__avatar
+                              - var imgUrl = item[1]
+                              +image(imgUrl, "reviews__avatar-img") 
+                          .reviews__info
+                            .reviews__name #{item[2]}
+                            .reviews__position #{item[3]}
+        
+        section.connection
+          .container.connection-section
+            .last-section__wrapper
+              h3.left__title.connection__title Связаться со мной
+              form.connection-feedback.feedback
+                .feedback__row
+                  label.feedback__block.feedback__block--name
+                    .feedback__title Введите ваше имя
+                    input.feedback__input(type="text", name="name")
+                  label.feedback__block.feedback__block--email
+                    .feedback__title Введите ваш email
+                    input.feedback__input(type="text", name="email")
+                .feedback__row
+                  label.feedback__block.feedback__block--message
+                    .feedback__title Сообщение к письму
+                    textarea(name="message", cols="", rows="2").feedback__input
+                .feedback__row.feedback__btn
+                  button.feedback__button(type="submit") Отправить
+
+<!--skills-->
+      footer.footer
+        .container.footer-container
+          .footer__left
+            .footer__year &copy 2019
+            .footer__sign
+              .footer__name Полина Совершенная
+              .footer__note Личный сайт веб-разработчика
+
+          .footer__right
+            .footer__nav
+              nav.menu
+                  - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
+                  ul.menu__list
+                    each item in items
+                      li.menu__item
+                        a(href="").menu__link #{item}
+
+            .footer__bottom
+              .footer__bottom-left
+                .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__socials
+                  - var icons = ["insta", "vk", "github"];
+                  ul.socials__list
+                    each icon in icons
+                      li.socials__item
+                        a(href="").socials__link
+                          +icon(icon, "socials__icon")
+              .footer__botoom-right
+                .footer__quote
+                  .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .footer__quote-author Martin Golding
+           
+
+
