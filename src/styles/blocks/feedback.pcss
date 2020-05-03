@@ -23,10 +23,11 @@
     
     &__block{
         flex: 1;
-        border-bottom: 1px solid #464d62;
         margin-right: 90px;
-        padding-left: 40px;
         position: relative;
+        color: #cdcfd6;
+        padding-left: 40px;
+        border-bottom: 1px solid #464d62;
     }
     
     &__input{
@@ -50,39 +51,37 @@
     }
 }
 
-.feedback__block--name:before{
-    content: "";
-    display: block;
+
+.feedback__title{
+    color: #cdcfd6;
+}
+
+
+.feedback__icon{
     position: absolute;
+    bottom: 12px;
+    left: 0;
     width: 26px;
     height: 30px;
-    background: url(../images/content/input-name.png) no-repeat;
-    bottom: 16px;
-    left: 0;
-}
 
-.feedback__block--email:before{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 31px;
-    height: 23px;
-    background: url(../images/content/input-email.png) no-repeat;
-    bottom: 16px;
-    left: 0;
-}
-
-.feedback__block--message:before{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: url(../images/content/input-message.png) no-repeat;
-    bottom: 30px;
-    left: 0;
+    .feedback__icon-svg{
+        fill: currentColor;
+    }
 }
 
 .feedback__block--message{
     margin-bottom: 24px;
 }
+
+.feedback__block:hover{   
+    cursor: pointer;
+    color: #6c23f4;
+    border-bottom-color: currentColor;
+}
+
+.feedback__block:focus{
+    color: #6c23f4;
+}
+
+
+

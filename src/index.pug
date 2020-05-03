@@ -8,6 +8,9 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
   body
+
+  - var socialIcons = [{"name" : "insta", "link" : "#"}, {"name" : "vk", "link" : "#"}, {"name" : "github", "link" : "#"}];
+  - var menu = [{"title" : "Главная", "link" : "#"}, {"title" : "Обо мне", "link" : "#"}, {"title" : "Навыки", "link" : "#"}, {"title" : "Работы", "link" : "#"}, {"title" : "Отзывы", "link" : "#"}, {"title" : "Связаться", "link" : "#"}];
     .wrapper
       .first-section
         section.hero
@@ -17,19 +20,9 @@ html(lang="en")
                 .logo 
                   +image("content/logo.png", "logo-pic")
               .header__nav
-                nav.menu
-                  - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-                  ul.menu__list
-                    each item in items
-                      li.menu__item
-                        a(href="").menu__link #{item}
+                +nav("header", menu)
               .header__socials
-                - var icons = ["insta", "vk", "github"];
-                ul.socials__list
-                  each icon in icons
-                    li.socials__item
-                      a(href="").socials__link
-                        +icon(icon, "socials__icon")
+                +socials("header", socialIcons)
 
             .hero__main
               .author__info
@@ -38,6 +31,7 @@ html(lang="en")
 
             .hero__scroll
               a(href="").hero__scroll-title Скролл
+                +icon("scroll", "scroll__icon")
               
 
         section.about
@@ -80,26 +74,27 @@ html(lang="en")
 
         .skills__section
           .container.skills-container
+            
             .skills__picture
               +image("content/backpack.png", "skills__picture-img") 
             .skills__content
               .skills__desc
                 h3.skills__title Чем я могу быть полезен вам
-                p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!          
               .skills__desk
                 -
                   var items = [
-                    ["Frontend", [
+                    ["Front-end", [
                       ["HTML5", "-25s"], 
-                      ["CSS3", "-13s"], 
+                      ["CSS3", "-15s"], 
                       ["JavaScript", "-75s"], 
-                      ["Jquery и Vue.js", "-30s"]]
+                      ["Jquery и Vue.js", "-25s"]]
                     ],
-                    ["Backend", [
-                      ["GIT", "-13s"], 
-                      ["Terminal", "-50s"], 
-                      ["Gulp", "-25s"], 
-                      ["Webpack", "-40s"]]
+                    ["Workflow", [
+                      ["GIT", "-10s"], 
+                      ["Terminal", "-25s"], 
+                      ["Gulp", "-50s"], 
+                      ["Webpack", "-37s"]]
                     ]
                   ];
 
@@ -108,21 +103,21 @@ html(lang="en")
                     li.skills__list-item.skills__type 
                       .skills__type-title #{item[0]}
                       ul.skills__type-list
-                        each skill in items[1]
+                        each skill in item[1]
                           li.skills__type-item
                             .skill
-                              svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                              svg(viewBox="0 0 160 160" preserveAspectRatio="none").skill__shape
                                 defs.defs
                                   linearGradient(x1="0%" y1="50%" x2="100%" y2="100%")#skill__gradient
-                                    stop(offset="60%" stop-color="#5500f2").skill__fill--start
-                                    stop(offset="100%" stop-color="#ad00ed").skill__fill--stop                                
+                                    stop(offset="60%" stop-color="#5500f2")
+                                    stop(offset="100%" stop-color="#ad00ed")                               
                                 circle(
-                                  r="67" cx="100" cy="100"
-                                ).skill__circle.skill__circle--under
+                                  r="71" cx="80" cy="80"
+                                ).skill__circle
                                 circle(
-                                  r="67" cx="100" cy="100" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
-                                ).skill__circle.skill__circle--above
-                              .skill__title #{skill[0]}
+                                  r="71" cx="120" cy="120" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
+                                ).skill__ring
+                              .skill__name #{skill[0]}
 
 
         
@@ -145,6 +140,7 @@ html(lang="en")
                         - var url = link;                         
                         a(href="")
                           +image(url, "projects__slider-list-img")
+                          .projects__slider-img-cover
                   .projects__slider-btns
                     a(href="").projects__slider-btns-link.projects__slider-prev <
                     a(href="").projects__slider-btns-link.projects__slider-next >
@@ -164,6 +160,7 @@ html(lang="en")
                 p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
               .projects__link
                 a(href="") Посмотреть сайт
+                  +icon("link", "projects__link-icon")
 
         
 
@@ -210,13 +207,19 @@ html(lang="en")
                   label.feedback__block.feedback__block--name
                     .feedback__title Введите ваше имя
                     input.feedback__input(type="text", name="name")
+                    .feedback__icon
+                      +icon("user", "feedback__icon-svg")
                   label.feedback__block.feedback__block--email
                     .feedback__title Введите ваш email
                     input.feedback__input(type="text", name="email")
+                    .feedback__icon
+                      +icon("envelope", "feedback__icon-svg")
                 .feedback__row
                   label.feedback__block.feedback__block--message
                     .feedback__title Сообщение к письму
                     textarea(name="message", cols="", rows="2").feedback__input
+                    .feedback__icon
+                      +icon("message", "feedback__icon-svg")
                 .feedback__row.feedback__btn
                   button.feedback__button(type="submit") Отправить
 
@@ -236,23 +239,13 @@ html(lang="en")
 
           .footer__right
             .footer__nav
-              nav.menu
-                  - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"];
-                  ul.menu__list
-                    each item in items
-                      li.menu__item
-                        a(href="").menu__link #{item}
+              +nav("footer", menu)
  
             .footer__bottom
               .footer__bottom-left
                 .footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
                 .footer__socials
-                  - var icons = ["insta", "vk", "github"];
-                  ul.socials__list
-                    each icon in icons
-                      li.socials__item
-                        a(href="").socials__link
-                          +icon(icon, "socials__icon")
+                  +socials("footer", socialIcons)
               .footer__botoom-right
                 .footer__quote
                   .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
