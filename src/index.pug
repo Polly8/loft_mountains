@@ -17,8 +17,7 @@ html(lang="en")
           .container
             header.header
               .header__logo
-                .logo 
-                  +image("content/logo.png", "logo-pic")
+                a(href="#").logo BA
               .header__nav
                 +nav("header", menu)
               .header__socials
@@ -106,16 +105,16 @@ html(lang="en")
                         each skill in item[1]
                           li.skills__type-item
                             .skill
-                              svg(viewBox="0 0 160 160" preserveAspectRatio="none").skill__shape
+                              svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                                 defs.defs
                                   linearGradient(x1="0%" y1="50%" x2="100%" y2="100%")#skill__gradient
                                     stop(offset="60%" stop-color="#5500f2")
                                     stop(offset="100%" stop-color="#ad00ed")                               
                                 circle(
-                                  r="71" cx="80" cy="80"
+                                  r="71" cx="100" cy="100"
                                 ).skill__circle
                                 circle(
-                                  r="71" cx="120" cy="120" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
+                                  r="71" cx="100" cy="100" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
                                 ).skill__ring
                               .skill__name #{skill[0]}
 

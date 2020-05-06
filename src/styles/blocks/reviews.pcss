@@ -121,7 +121,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 700;
-    color: #414c63;
+    color: currentColor;
 }
 
 .reviews__btns-next:after{
@@ -132,7 +132,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-weight: 700;
-    color: #414c63;
+    color: currentColor;
 }
 
 .reviews-button{
@@ -143,4 +143,10 @@
     background-color: transparent;
     position: relative;
     margin-right: 30px;
+    color: #414c63;
+
+    &:hover{
+        border-color: #6c23f4;
+        color: #6c23f4;
+    }
 }
