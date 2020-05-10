@@ -10,19 +10,45 @@
         flex-direction: row;
         justify-content: space-between;
         width: 23%;
+
+        @include desktop{
+            flex-direction: column;
+            justify-content: initial;
+        }
+
+        @include phones{
+            width: 100%;
+            margin-bottom: 46px;
+        }
     }
     
     &__right{
         width: 65%;
+
+        @include phones{
+            width: 100%;
+        }
     }
     
     &__year{
         font-size: 48px;
         font-weight: 600;
+
+        @include phones{
+            margin-bottom: 14px;
+        }
     }
     
     &__sign{
         width: 41%;
+
+        @include desktop{
+            width: 53%;
+        }
+
+        @include tablets{
+            width: 100%;
+        }
     }
     
     &__name{
@@ -30,6 +56,11 @@
         font-size: 18px;
         color: #fff;
         margin-bottom: 30px;
+        text-transform: uppercase;
+
+        @include phones{
+            margin-bottom: 0;
+        }
     }
     
     &__nav{
@@ -37,20 +68,50 @@
     
         .menu__list{
             color:#fff;
+
+            @include tablets{
+                flex-wrap: wrap;
+            }
+
+            @include phones{
+                margin-left: -26px;
+            }
+        }
+
+        @include tablets{
+            margin-bottom: 28px;
         }
     }
     
     &__bottom{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        padding-left: 25px;
 
         &-left{
             width: 35%;
+            margin-right: 50px;
+
+            @include tablets{
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+            @include phones{
+                width: 95%;
+            }
         }
         
         &-right{
             width: 49%;
+        }
+
+        @include tablets{
+            flex-direction: column;
+        }
+
+        @include phones{
+            padding-left: 0;
         }
     }
 
@@ -66,6 +127,10 @@
         color: #fff;
         font-style: italic;
     }
+
+    @include phones{
+        padding: 60px 0;
+    }
 }
 
 .footer-container{
@@ -73,6 +138,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include phones{
+        flex-direction: column;
+    }
 }
 
 .footer__socials .socials__item{
@@ -87,4 +156,10 @@
 
 .footer__socials .socials__item:hover{
     color: #5500f2;
+}
+
+.footer__nav .menu__item{
+    @include tablets{
+        margin-bottom: 28px;
+    }
 }

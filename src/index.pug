@@ -22,6 +22,8 @@ html(lang="en")
                 +nav("header", menu)
               .header__socials
                 +socials("header", socialIcons)
+                .header__humburger
+                  a(href="").header__humburger-link
 
             .hero__main
               .author__info
@@ -63,19 +65,19 @@ html(lang="en")
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
       section.skills
+      
         .triangles.skills__triangles
           svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
             polygon(points="0,0 0,100 1000,100")
           svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
             polygon(points="1000,0 1000,100 0,100")            
 
-<!--first-section-->
+      
 
         .skills__section
           .container.skills-container
             
-            .skills__picture
-              +image("content/backpack.png", "skills__picture-img") 
+            
             .skills__content
               .skills__desc
                 h3.skills__title Чем я могу быть полезен вам
@@ -117,11 +119,12 @@ html(lang="en")
                                   r="71" cx="100" cy="100" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
                                 ).skill__ring
                               .skill__name #{skill[0]}
-
+              .skills__picture
+                +image("content/backpack.png", "skills__picture-img") 
 
         
 
-<!--skills-->
+
 
       section.projects
         .container
@@ -227,7 +230,7 @@ html(lang="en")
               polygon(points="0,0 0,100 1000,100")
             svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
               polygon(points="1000,0 1000,100 0,100")
-<!--skills-->
+
       footer.footer
         .container.footer-container
           .footer__left

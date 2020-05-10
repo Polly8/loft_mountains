@@ -3,15 +3,25 @@
     font-size: 36px;
     font-weight: 700;
     width: 54%;
+
+    @include phones{
+        font-size: 24px;
+        width: 100%;
+    }
 }
 
 /*SKILLS*/
 
 .skill{
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     fill: transparent;
     position: relative;
+
+    @include tablets{
+        width: 155px;
+        height: 155px;
+    }
 }
 
 .skill__circle{
@@ -46,3 +56,7 @@
         stroke-dashoffset: 0;
     }
 }
+
+
+
+

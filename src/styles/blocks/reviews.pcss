@@ -9,6 +9,18 @@
 
     &__wrapper{
         width: 65%;
+
+        @include desktop{
+            width: 75%;
+        }
+
+        @include tablets{
+            width: 100%;
+        }
+    }
+
+    @include phones{
+        padding-bottom: 100px;
     }
 }
 
@@ -31,6 +43,10 @@
         display: flex;
         flex-direction: column;
         padding-top: 250px;
+
+        @include phones{
+            padding-top: 164px;
+        }
     }
 
     &__top{
@@ -39,10 +55,20 @@
         margin-bottom: 90px;
         justify-content: space-between;
         align-items: center;
+
+        @include phones{
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 30px;
+        }
     }
 
     &__btns{
         width: 47%;
+
+        @include phones{
+            width: 65%;
+        }
     }
     
     &__list{
@@ -64,6 +90,10 @@
 
             &:last-child{
                 margin-right: 0;
+
+                @include phones{
+                    display: none;
+                }
             }
             
             &:before{
@@ -75,6 +105,26 @@
                 background: url(../images/content/quote.png) no-repeat;
                 top: 0;
                 left: -100px;
+
+                @include tablets{
+                    background-size: contain;
+                    width: 40px;
+                    height: 35px;
+                    left: -55px;
+                }
+
+                @include phones{
+                    display: none;
+                }
+            }
+
+            @include tablets{
+                margin: 0 55px 0;
+            }
+
+            @include phones{
+                width: 100%;
+                margin: 0;
             }
         }       
     }
@@ -148,5 +198,19 @@
     &:hover{
         border-color: #6c23f4;
         color: #6c23f4;
+    }
+
+    &:last-child{
+        @include phones{
+            margin-right: 0;
+        }
+    }
+   
+}
+
+.reviews__title{
+    @include phones{
+        width: 100%;
+        margin-bottom: 30px;
     }
 }

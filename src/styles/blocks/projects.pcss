@@ -7,17 +7,37 @@
 
     &__title{
         margin-bottom: 90px;
+
+        @include phones{
+            margin-bottom: 30px;
+            width: 100%;
+            text-align: center;
+        }
     }
     
     &__content{
         display: flex;
         flex-direction: row;
+
+        @include tablets{
+            flex-direction: column;
+        }
     }
     
     &__left{
         flex: 3;
         padding-right: 150px;
         position: relative;
+
+        @include tablets{
+            padding-right: 80px;
+            margin-bottom: 100px;
+        }
+
+        @include phones{
+            padding: 0;
+            margin-bottom: 60px;
+        }
     }
     
     &__right{
@@ -31,6 +51,15 @@
                 display: flex;
                 flex-direction: row;
                 margin-bottom: 46px;
+
+                @include tablets{
+                    justify-content: center;
+
+                }
+
+                @include phones{
+                    margin-bottom: 24px;
+                }
             }
             
             &-item{
@@ -52,6 +81,11 @@
             font-weight: 700;
             color: #464d62;
             margin-bottom: 40px;
+
+            @include phones{
+                margin-bottom: 16px;
+                font-size: 24px;
+            }
         }
         
         .projects__text p{
@@ -71,6 +105,17 @@
                 text-decoration: underline;
             }
         }
+
+        @include tablets{
+            text-align: center;
+            width: 65%;
+            margin: 0 auto;
+        }
+
+        @include phones{
+            text-align: start;
+            width: 80%;
+        }
     }
 
     &__figure{
@@ -81,6 +126,15 @@
         font-weight: 800;
         color: #e6e6e6;
         z-index: -1;
+
+        @include tablets{
+            right: -50px;
+            top: -150px;
+        }
+
+        @include phones{
+            display: none;
+        }
     }
 }
 
@@ -95,8 +149,8 @@
 }
 
 .projects__slider{
-    width: 990px;
-    height: 560px;
+    max-width: 990px;
+    max-height: 560px;
     overflow: hidden;
     position: relative;
 
@@ -112,6 +166,10 @@
         position: absolute;
         bottom: 0;
         right: 160px;
+
+        @include tablets{
+            right: 80px;
+        }
     }
     
     &-list{
@@ -130,6 +188,10 @@
 
             &:hover .projects__slider-img-cover{
                 opacity: .6;
+            }
+
+            @include phones{
+                display: none;
             }
         }
     }
@@ -151,6 +213,11 @@
                 background: #5500f2;
             }
         }
+
+        @include phones{
+            right: -77px;
+            bottom: 0;
+        }
     }
 }
 
@@ -160,6 +227,13 @@
 
 .projects__slider-list-item:last-child{
     outline: 3px solid #5500f2;
+}
+
+.projects__slider-list-item:first-child{
+
+    @include desktop{
+        display: none;
+    }  
 }
 
 .projects__slider-img-cover{
@@ -173,4 +247,12 @@
     opacity: 0;
     will-change: opacity;
     transition: 0.5s;
+}
+
+.projects .container{
+
+    @include phones{
+        width: 100%;
+    }
+    
 }

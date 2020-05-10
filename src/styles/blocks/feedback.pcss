@@ -3,6 +3,10 @@
 
 .connection__title{
     margin-bottom: 90px;
+
+    @include tablets{
+        margin: 0 auto 60px;
+    }
 }
 
 .feedback{
@@ -18,6 +22,15 @@
     
         &:last-child{
             margin-bottom: 0;
+
+            @include phones{
+                margin-bottom: 28px;
+            }
+        }
+
+        @include phones{
+            flex-direction: column;
+            margin-bottom: 0;
         }
     }
     
@@ -28,6 +41,16 @@
         color: #cdcfd6;
         padding-left: 40px;
         border-bottom: 1px solid #464d62;
+
+        &:last-child{
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        @include phones{
+            margin-right: 0;
+            margin-bottom: 36px;
+        }
     }
     
     &__input{
@@ -52,6 +75,14 @@
         &:hover{
             background: linear-gradient(to right, #9c00ff, #5900ff);
         }
+
+        @include tablets{
+            margin: 0 auto;
+        }
+
+        @include phones{
+            padding: 23px 100px;
+        }
     }
 }
 
@@ -70,6 +101,10 @@
 
     .feedback__icon-svg{
         fill: currentColor;
+    }
+
+    @include phones{
+        display: none;
     }
 }
 

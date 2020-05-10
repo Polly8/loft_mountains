@@ -18,6 +18,14 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        
+        @include desktop{
+            width: 60%;
+        }
+
+        @include phones{
+            width: 100%;
+        }
     }
 
     &__scroll{
@@ -39,7 +47,11 @@
             position: relative;
             font-weight: 600;
             padding: 2px 0;
-        }        
+        }
+        
+        @include tablets{
+            display: none;
+        }
     }
 }
 
@@ -61,6 +73,24 @@
 
     &__nav{
         margin: 0 60px;
+
+        @include tablets{
+            display: none;
+        }
+    }
+
+    &__socials{
+
+        @include tablets{
+            display: flex;
+            flex-direction: row;
+            width: 40%;
+            justify-content: space-between;
+        }
+        
+        @include phones{
+            width: initial;
+        }
     }
 }
 
@@ -107,6 +137,15 @@
             }
         }       
     }
+
+}
+
+.header__socials{
+    .socials__list{
+        @include phones{
+            display: none;
+        }
+    }
 }
 
 .header__socials .socials__link:hover .socials__icon{
@@ -125,6 +164,24 @@
         color: #a0a6b8;
         font-size: 18px;
         margin-bottom: 30px;
+
+        @include desktop{
+            margin-bottom: 0;
+            text-align: end;
+            margin-right: 60px;
+        }
+
+        @include tablets{
+            margin-right: 0;
+            margin-bottom: 30px;
+            width: 50%;
+            text-align: center;
+        }
+
+        @include phones{
+            margin-bottom: 16px;
+        }
+        
     }
 
     &-name{
@@ -132,6 +189,29 @@
         font-size: 72px;
         font-weight: 800;
         line-height: 3.7rem;
+
+        @include desktop{
+            text-align: start;
+        }
+
+        @include tablets{
+            text-align: center;
+        }
+
+        @include phones{
+            font-size: 36px;
+        }
+    }
+
+    @include desktop{
+        flex-direction: row;
+        align-items: initial;
+        width: 100%;
+    }
+
+    @include tablets{
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -143,4 +223,30 @@
     width: 27px;
     height: 27px;
     fill: currentColor;
+}
+
+.header__humburger{
+    display: none;
+    width: 26px;
+    height: 22px;
+
+    @include tablets{
+        display: block;     
+    }
+}
+
+.header__humburger a{
+    background: url(../images/content/humburger.png) no-repeat;
+    background-size: cover;
+    width: 26px;
+    display: block;
+    height: 22px;
+}
+
+.header__humburger a:hover{
+
+    @include tablets{
+        cursor: pointer;
+    }
+    
 }
