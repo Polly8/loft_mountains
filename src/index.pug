@@ -9,60 +9,78 @@ html(lang="en")
     title Portfolio | main page
   body
 
-  - var socialIcons = [{"name" : "insta", "link" : "#"}, {"name" : "vk", "link" : "#"}, {"name" : "github", "link" : "#"}];
-  - var menu = [{"title" : "Главная", "link" : "#"}, {"title" : "Обо мне", "link" : "#"}, {"title" : "Навыки", "link" : "#"}, {"title" : "Работы", "link" : "#"}, {"title" : "Отзывы", "link" : "#"}, {"title" : "Связаться", "link" : "#"}];
+    - var socialIcons = [{"name" : "insta", "link" : "#"}, {"name" : "vk", "link" : "#"}, {"name" : "github", "link" : "#"}];
+    - var menu = [{"title" : "Главная", "link" : "#"}, {"title" : "Обо мне", "link" : "#"}, {"title" : "Навыки", "link" : "#"}, {"title" : "Работы", "link" : "#"}, {"title" : "Отзывы", "link" : "#"}, {"title" : "Связаться", "link" : "#"}];
     .wrapper
       .first-section
-        section.hero
-          .container
-            header.header
-              .header__logo
-                a(href="#").logo BA
-              .header__nav
-                +nav("header", menu)
-              .header__socials
-                +socials("header", socialIcons)
-                .header__humburger
-                  a(href="").header__humburger-link
+        .parallax-layer(data-speed="0.1")
+          img(src=require("images/content/m1.png")).parallax-img
+        .parallax-layer(data-speed="0.12")
+          img(src=require("images/content/m2.png")).parallax-img
+        .parallax-layer(data-speed="0.15")
+          img(src=require("images/content/m3.png")).parallax-img
+        .parallax-layer(data-speed="0.19")
+          img(src=require("images/content/m4.png")).parallax-img
+        .parallax-layer(data-speed="0.23")
+          img(src=require("images/content/m5.png")).parallax-img
+        .parallax-layer(data-speed="0.24")
+          img(src=require("images/content/m6.png")).parallax-img
+        .parallax-layer(data-speed="0.27")
+          img(src=require("images/content/m7.png")).parallax-img
+        .parallax-layer(data-speed="0.1")
+          img(src=require("images/content/m7.png")).parallax-img
 
-            .hero__main
-              .author__info
-                .author__info-title Личный сайт веб разработчика
-                .author__info-name Полина Совершенная
 
-            .hero__scroll
-              a(href="").hero__scroll-title Скролл
-                +icon("scroll", "scroll__icon")
-              
+        .wrapper-hero
+          section.hero        
+            .container.hero-container
+              header.header
+                .header__logo
+                  a(href="#").logo BA
+                .header__nav
+                  +nav("header", menu)
+                .header__socials
+                  +socials("header", socialIcons)
+                  .header__humburger
+                    a(href="").header__humburger-link
 
-        section.about
-          .container
-            .about-me
-              .about-me__left
-                .about-me__photo
-                  .about-me__avatar.avatar
-                    +image("content/user.jpg", "avatar__photo")
-                .about-me__info
-                  -
-                    var myinfo = [
-                      ["Проживаю:", "Сочи"],
-                      ["Возраст:", "24 года"],
-                      ["Родился:", "27 декабря 1995"]
-                    ];
-                  table.about-me__table
-                    tbody.about-me__table-content
-                      each item in myinfo
-                        tr
-                          td #{item[0]}
-                          td.about-me__table--bold #{item[1]}
+              .hero__main
+                .author__info
+                  .author__info-title Личный сайт веб разработчика
+                  .author__info-name Полина Совершенная
 
-              .about-me__right
-                .about-me__greeting Привет, меня зовут
-                h2.about-me__title Полина Совершенная
-                .about-me__text
-                  p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                .about-me__ps
-                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              .hero__scroll
+                a(href="").hero__scroll-title Скролл
+                  +icon("scroll", "scroll__icon")
+                
+          section.about
+            .container
+              .about-me
+                .about-me__left
+                  .about-me__photo
+                    .about-me__avatar.avatar
+                      +image("content/user.jpg", "avatar__photo")
+                  .about-me__info
+                    -
+                      var myinfo = [
+                        ["Проживаю:", "Сочи"],
+                        ["Возраст:", "24 года"],
+                        ["Родился:", "27 декабря 1995"]
+                      ];
+                    table.about-me__table
+                      tbody.about-me__table-content
+                        each item in myinfo
+                          tr
+                            td #{item[0]}
+                            td.about-me__table--bold #{item[1]}
+
+                .about-me__right
+                  .about-me__greeting Привет, меня зовут
+                  h2.about-me__title Полина Совершенная
+                  .about-me__text
+                    p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  .about-me__ps
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 
       section.skills
       
@@ -98,7 +116,6 @@ html(lang="en")
                       ["Webpack", "-37s"]]
                     ]
                   ];
-
                 ul.skills__list
                   each item in items
                     li.skills__list-item.skills__type 
@@ -118,7 +135,7 @@ html(lang="en")
                                 circle(
                                   r="71" cx="100" cy="100" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
                                 ).skill__ring
-                              .skill__name #{skill[0]}
+                              .skill__name #{skill[0]}              
               .skills__picture
                 +image("content/backpack.png", "skills__picture-img") 
 
@@ -252,6 +269,7 @@ html(lang="en")
                 .footer__quote
                   .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer__quote-author Martin Golding
-           
 
+ 
+    
 

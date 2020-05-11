@@ -2,9 +2,13 @@
 /*hero*/
 
 .first-section{
-    background: url(../images/content/hero-bg-full.png) no-repeat;
-    background-size: cover;
     padding-bottom: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper-hero{
+    position: relative;
 }
 
 .hero{
@@ -52,6 +56,14 @@
         @include tablets{
             display: none;
         }
+    }
+
+    &-container{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
 }
 
@@ -249,4 +261,86 @@
         cursor: pointer;
     }
     
+}
+
+/*parallax*/
+.parallax-layer{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+
+    .parallax-img{
+        position: absolute;
+    }
+
+    &:nth-child(1){
+        .parallax-img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            z-index: -16;
+        }
+    }
+
+    &:nth-child(2){
+        .parallax-img{
+            top: 260px;
+            right: 0;
+            z-index: -14;
+        }
+    }
+
+    &:nth-child(3){
+        .parallax-img{
+            top: 310px;
+            left: 50%;
+            z-index: -12;
+            margin-left: 12%;
+        }
+    }
+
+    &:nth-child(4){
+        .parallax-img{
+            z-index: -10;
+            top: 420px;
+            left: 0;
+        }
+    }
+
+    &:nth-child(5){
+        .parallax-img{
+            z-index: -8;
+            top: 420px;
+            left: 0;
+        }
+    }
+
+    &:nth-child(6){
+        .parallax-img{
+            z-index: -6;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    &:nth-child(7){
+        .parallax-img{
+            z-index: -4;
+            left: 0;
+            bottom: -300px;
+        }
+    }
+
+    &:nth-child(8){
+        .parallax-img{
+            z-index: -2;
+            left: 0;
+            bottom: -400px;
+        }
+    }
 }

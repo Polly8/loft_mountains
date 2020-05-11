@@ -161,3 +161,50 @@
         margin-bottom: 45px;
     }
 }
+
+/*SKILLS circles*/
+
+.skill{
+    width: 180px;
+    height: 180px;
+    fill: transparent;
+    position: relative;
+
+    @include tablets{
+        width: 155px;
+        height: 155px;
+    }
+}
+
+.skill__circle{
+    stroke: #eaeaea;
+    stroke-width: 10px;
+}
+
+.skill__ring{
+    stroke-width: 20px;
+    stroke-dasharray: 446;
+    animation: animationSkills 100s linear infinite;
+    animation-play-state: paused;
+}
+
+.skill__name{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    color: #a2a6b0;
+}
+
+
+@keyframes animationSkills{
+    from{
+        stroke-dashoffset: 446;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
+}
