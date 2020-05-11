@@ -8,12 +8,24 @@
     &__left{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        width: 23%;
+        width: 28%;
 
         @include desktop{
             flex-direction: column;
             justify-content: initial;
+        }
+
+        @include deskTabl{
+            width: 35%;
+        }
+
+        @include tablets{
+            width: 46%;
+        }
+
+        @include tablPhone{
+            width: 100%;
+            margin-bottom: 46px;
         }
 
         @include phones{
@@ -23,9 +35,9 @@
     }
     
     &__right{
-        width: 65%;
+        width: 66%;
 
-        @include phones{
+        @include desktop{
             width: 100%;
         }
     }
@@ -33,6 +45,11 @@
     &__year{
         font-size: 48px;
         font-weight: 600;
+        margin-right: 20px;
+
+        @include tablPhone{
+            margin-bottom: 14px;
+        }
 
         @include phones{
             margin-bottom: 14px;
@@ -58,6 +75,10 @@
         margin-bottom: 30px;
         text-transform: uppercase;
 
+        @include tablPhone{
+            margin-bottom: 0;
+        }
+
         @include phones{
             margin-bottom: 0;
         }
@@ -71,6 +92,10 @@
 
             @include tablets{
                 flex-wrap: wrap;
+            }
+
+            @include tablPhone{
+                margin-left: -26px;
             }
 
             @include phones{
@@ -97,6 +122,10 @@
                 margin-bottom: 50px;
             }
 
+            @include tablPhone{
+                width: 95%;
+            }
+
             @include phones{
                 width: 95%;
             }
@@ -108,6 +137,10 @@
 
         @include tablets{
             flex-direction: column;
+        }
+
+        @include tablPhone{
+            padding-left: 0;
         }
 
         @include phones{
@@ -128,6 +161,10 @@
         font-style: italic;
     }
 
+    @include tablPhone{
+        padding: 60px 0;
+    }
+
     @include phones{
         padding: 60px 0;
     }
@@ -138,6 +175,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include tablPhone{
+        flex-direction: column;
+    }
 
     @include phones{
         flex-direction: column;

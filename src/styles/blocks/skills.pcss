@@ -36,6 +36,10 @@
             align-items: flex-end;
         }
 
+        @include tablPhone{
+            padding-top: 100px;
+        }
+
         @include phones{
             padding: 0;
         }
@@ -56,8 +60,12 @@
         width: 50%;
        }
 
+       @include tablPhone{
+            width: 100%;
+        }
+
        @include phones{
-        width: 100%;
+            width: 100%;
        }
     }
     
@@ -66,9 +74,17 @@
         line-height: 30px;
         position: relative;
 
+        @include deskTabl{
+            min-width: 700px;
+        }
+
         @include tablets{
             width: 100%;
             margin: 0 auto;
+        }
+
+        @include tablPhone{
+            margin-bottom: 70px;
         }
 
         @include phones{
@@ -78,7 +94,7 @@
 
     &__desc{
         margin-bottom: 90px;
-        width: 61%;
+        width: 64%;
     
         .skills__title{
             font-size: 30px;
@@ -88,6 +104,11 @@
             @include tablets{
                 width: 70%;
                 margin: 0 auto 56px;
+            }
+
+            @include tablPhone{
+                width: 100%;
+                font-size: 24px;
             }
 
             @include phones{
@@ -100,11 +121,20 @@
             font-weight: 600;
             color: #a2a6b0;
         }
+        
+        @include desktop{
+            width: 72%;
+        }
 
         @include tablets{
             width: 65%;
             margin: 0 auto 90px;
             text-align: center;
+        }
+
+        @include tablPhone{
+            width: 100%;
+            text-align: start;
         }
 
         @include phones{
@@ -126,6 +156,10 @@
 
         @include tablets{
             justify-content: center;
+        }
+
+        @include tablPhone{
+            flex-wrap: wrap;
         }
 
         @include phones{
@@ -155,6 +189,10 @@
 .skills__desk {
     @include tablets{
         margin-bottom: 100px;
+    }
+
+    @include tablPhone{
+        margin-bottom: 45px;
     }
 
     @include phones{

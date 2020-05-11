@@ -1,0 +1,17 @@
+
+[
+    ["Front-end", [
+        ["HTML5", "-25s"], 
+        ["CSS3", "-15s"], 
+        ["JavaScript", "-75s"], 
+        ["Jquery и Vue.js", "-25s"]
+        ]
+    ],
+
+    ["Workflow", [
+        ["GIT", "-10s"], 
+        ["Terminal", "-25s"], 
+        ["Gulp", "-50s"], 
+        ["Webpack", "-37s"]]
+    ]
+]

@@ -9,12 +9,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 978px;
+    max-width: 978px;
     margin: 160px auto 0;
     line-height: 30px;
 
     &__left{
         width: 35%;
+
+        @include tablPhone{
+            width: 100%;
+            margin-bottom: 45px;
+        }
 
         @include phones{
             width: 100%;
@@ -29,6 +34,10 @@
         display: flex;
         flex-direction: column;
 
+        @include tablPhone{
+            width: 100%;
+        }
+
         @include phones{
             width: 100%;
         }
@@ -42,6 +51,10 @@
             margin: 0 0 74px;
         }
 
+        @include tablPhone{
+            margin: 0 auto 30px;
+        }
+
         @include phones{
             margin: 0 auto 30px;
         }
@@ -49,6 +62,10 @@
 
     &__greeting{
         margin-bottom: 26px;
+
+        @include tablPhone{
+            margin-bottom: 20px;
+        }
 
         @include phones{
             margin-bottom: 20px;
@@ -60,6 +77,10 @@
         font-size: 36px;
         font-weight: bold;
         color: #464d62;
+
+        @include tablPhone{
+            margin-bottom: 50px;
+        }
 
         @include phones{
             margin-bottom: 50px;
@@ -98,6 +119,11 @@
     }
 
     &__text{
+
+        @include tablPhone{
+            margin-bottom: 45px;
+        }
+
         @include phones{
             margin-bottom: 45px;
         }
@@ -105,6 +131,10 @@
 
     @include tablets{
         width: 95%;
+    }
+
+    @include tablPhone{
+        flex-direction: column;
     }
 
     @include phones{

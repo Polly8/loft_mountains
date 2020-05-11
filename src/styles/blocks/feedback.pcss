@@ -14,6 +14,7 @@
     flex-direction: column;
     color: #c6c8d0;
     font-weight: 500;
+    width: 60%;
 
     &__row{
         display: flex;
@@ -23,9 +24,18 @@
         &:last-child{
             margin-bottom: 0;
 
+            @include tablPhone{
+                margin-bottom: 28px;
+            }
+
             @include phones{
                 margin-bottom: 28px;
             }
+        }
+
+        @include tablPhone{
+            flex-direction: column;
+            margin-bottom: 0;
         }
 
         @include phones{
@@ -41,10 +51,16 @@
         color: #cdcfd6;
         padding-left: 40px;
         border-bottom: 1px solid #464d62;
+        margin-bottom: 30px;
 
         &:last-child{
             margin-right: 0;
             margin-bottom: 30px;
+        }
+
+        @include tablPhone{
+            margin-right: 0;
+            margin-bottom: 36px;
         }
 
         @include phones{
@@ -80,9 +96,22 @@
             margin: 0 auto;
         }
 
+        @include tablPhone{
+            padding: 23px 100px;
+        }
+
         @include phones{
             padding: 23px 100px;
         }
+    }
+
+    @include desktop{
+        min-width: 600px;
+    }
+
+    @include tablPhone{
+        min-width: initial;
+        width: 100%;
     }
 }
 
@@ -101,6 +130,10 @@
 
     .feedback__icon-svg{
         fill: currentColor;
+    }
+
+    @include tablPhone{
+        display: none;
     }
 
     @include phones{

@@ -24,7 +24,11 @@
         transform: translate(-50%, -50%);
         
         @include desktop{
-            width: 60%;
+            width: 80%;
+        }
+
+        @include tablPhone{
+            width: 100%;
         }
 
         @include phones{
@@ -86,6 +90,14 @@
     &__nav{
         margin: 0 60px;
 
+        @include desktop{
+            margin: 0 20px;
+        }
+
+        @include deskTabl{
+            width: 65%;
+        }
+
         @include tablets{
             display: none;
         }
@@ -96,8 +108,12 @@
         @include tablets{
             display: flex;
             flex-direction: row;
-            width: 40%;
+            width: initial;
             justify-content: space-between;
+        }
+
+        @include tablPhone{
+            width: initial;
         }
         
         @include phones{
@@ -111,10 +127,18 @@
         display: flex;
         flex-direction: row;
         color: #464d62;
+
+        @include deskTabl{
+            justify-content: space-between;
+        }
     }
 
     &__link{
         padding: 36px 30px;
+
+        @include deskTabl{
+            padding: 36px 10px;
+        }
         
     }
 
@@ -150,10 +174,19 @@
         }       
     }
 
+    @include tablets{
+        margin-right: 60px;
+    }
+
 }
 
 .header__socials{
     .socials__list{
+
+        @include tablPhone{
+            display: none;
+        }
+
         @include phones{
             display: none;
         }
@@ -190,6 +223,10 @@
             text-align: center;
         }
 
+        @include tablPhone{
+            margin-bottom: 16px;
+        }
+
         @include phones{
             margin-bottom: 16px;
         }
@@ -208,6 +245,10 @@
 
         @include tablets{
             text-align: center;
+        }
+
+        @include tablPhone{
+            font-size: 36px;
         }
 
         @include phones{

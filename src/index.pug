@@ -101,41 +101,9 @@ html(lang="en")
                 h3.skills__title Чем я могу быть полезен вам
                 p.skills__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!          
               .skills__desk
-                -
-                  var items = [
-                    ["Front-end", [
-                      ["HTML5", "-25s"], 
-                      ["CSS3", "-15s"], 
-                      ["JavaScript", "-75s"], 
-                      ["Jquery и Vue.js", "-25s"]]
-                    ],
-                    ["Workflow", [
-                      ["GIT", "-10s"], 
-                      ["Terminal", "-25s"], 
-                      ["Gulp", "-50s"], 
-                      ["Webpack", "-37s"]]
-                    ]
-                  ];
-                ul.skills__list
-                  each item in items
-                    li.skills__list-item.skills__type 
-                      .skills__type-title #{item[0]}
-                      ul.skills__type-list
-                        each skill in item[1]
-                          li.skills__type-item
-                            .skill
-                              svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
-                                defs.defs
-                                  linearGradient(x1="0%" y1="50%" x2="100%" y2="100%")#skill__gradient
-                                    stop(offset="60%" stop-color="#5500f2")
-                                    stop(offset="100%" stop-color="#ad00ed")                               
-                                circle(
-                                  r="71" cx="100" cy="100"
-                                ).skill__circle
-                                circle(
-                                  r="71" cx="100" cy="100" stroke="url(#skill__gradient)" transform="rotate(-180 100 100)" style=`animation-delay: ${skill[1]};`
-                                ).skill__ring
-                              .skill__name #{skill[0]}              
+
+                #skills-component
+                              
               .skills__picture
                 +image("content/backpack.png", "skills__picture-img") 
 
@@ -151,18 +119,18 @@ html(lang="en")
               .projects__slider
                 .projects__slider-item
                   +image("content/1.jpg", "projects__photo")
-              .projects__slider-links
-                - var links = ["content/2.jpg", "content/3.jpg", "content/4.jpg", "content/5.jpg"];
-                  ul.projects__slider-list
-                    each link in links
-                      li.projects__slider-list-item
-                        - var url = link;                         
-                        a(href="")
-                          +image(url, "projects__slider-list-img")
-                          .projects__slider-img-cover
-                  .projects__slider-btns
-                    a(href="").projects__slider-btns-link.projects__slider-prev <
-                    a(href="").projects__slider-btns-link.projects__slider-next >
+                  .projects__slider-links
+                    - var links = ["content/2.jpg", "content/3.jpg", "content/4.jpg", "content/5.jpg"];
+                      ul.projects__slider-list
+                        each link in links
+                          li.projects__slider-list-item
+                            - var url = link;                         
+                            a(href="")
+                              +image(url, "projects__slider-list-img")
+                              .projects__slider-img-cover
+                .projects__slider-btns
+                  a(href="").projects__slider-btns-link.projects__slider-prev <
+                  a(href="").projects__slider-btns-link.projects__slider-next >
                                 
                     
               .projects__figure 4
@@ -185,62 +153,83 @@ html(lang="en")
 
 
       .last-section
-        section.reviews
-          .container.reviews-section
-            .last-section__wrapper
-              .reviews__top
-                h3.reviews__title.left__title Что обо мне говорят
-                .reviews__btns
-                  button.reviews-button.reviews__btns-prev 
-                  button.reviews-button.reviews__btns-next 
-              .reviews__content
-                .reviews__slider
 
-                  -
-                    var reviews = [
-                      ["Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                      "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
-                      ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
-                      "content/sab.png", "Владимир Сабанцев", "Преподаватель"]   
-                    ];
-
-                  ul.reviews__list
-                    each item in reviews
-                      li.reviews__list-item
-                        p #{item[0]}
-                        .reviews__autor
-                          .reviews__photo
-                            .reviews__avatar
-                              - var imgUrl = item[1]
-                              +image(imgUrl, "reviews__avatar-img") 
-                          .reviews__info
-                            .reviews__name #{item[2]}
-                            .reviews__position #{item[3]}
+        .b-parallax-layer.b-parallax-layer-1
+          img(src=require("images/content/b1.png")).b-parallax-img(data-distance="0.1")
+        .b-parallax-layer.b-parallax-layer-2
+          img(src=require("images/content/b2.png")).b-parallax-img(data-distance="0.12")
+        .b-parallax-layer.b-parallax-layer-2
+          img(src=require("images/content/b2.png")).b-parallax-img(data-distance="0.12")
+        .b-parallax-layer.b-parallax-layer-3
+          img(src=require("images/content/b3.png")).b-parallax-img(data-distance="0.15")
+        .b-parallax-layer.b-parallax-layer-4
+          img(src=require("images/content/b4.png")).b-parallax-img(data-distance="0.19")
+        .b-parallax-layer.b-parallax-layer-5
+          img(src=require("images/content/b5.png")).b-parallax-img(data-distance="0.23")
+        .b-parallax-layer.b-parallax-layer-6
+          img(src=require("images/content/b6.png")).b-parallax-img(data-distance="0.24")
+        .b-parallax-layer.b-parallax-layer-4
+          img(src=require("images/content/b4.png")).b-parallax-img(data-distance="0.19")
+        .b-parallax-layer.b-parallax-layer-4
+          img(src=require("images/content/b4.png")).b-parallax-img(data-distance="0.19")
         
-        section.connection
-          .container.connection-section
-            .last-section__wrapper
-              h3.left__title.connection__title Связаться со мной
-              form.connection-feedback.feedback
-                .feedback__row
-                  label.feedback__block.feedback__block--name
-                    .feedback__title Введите ваше имя
-                    input.feedback__input(type="text", name="name")
-                    .feedback__icon
-                      +icon("user", "feedback__icon-svg")
-                  label.feedback__block.feedback__block--email
-                    .feedback__title Введите ваш email
-                    input.feedback__input(type="text", name="email")
-                    .feedback__icon
-                      +icon("envelope", "feedback__icon-svg")
-                .feedback__row
-                  label.feedback__block.feedback__block--message
-                    .feedback__title Сообщение к письму
-                    textarea(name="message", cols="", rows="2").feedback__input
-                    .feedback__icon
-                      +icon("message", "feedback__icon-svg")
-                .feedback__row.feedback__btn
-                  button.feedback__button(type="submit") Отправить
+        .wrapper-footer
+          section.reviews
+            .container.reviews-section
+              .last-section__wrapper
+                .reviews__top
+                  h3.reviews__title.left__title Что обо мне говорят
+                  .reviews__btns
+                    button.reviews-button.reviews__btns-prev 
+                    button.reviews-button.reviews__btns-next 
+                .reviews__content
+                  .reviews__slider
+
+                    -
+                      var reviews = [
+                        ["Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                        "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
+                        ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                        "content/sab.png", "Владимир Сабанцев", "Преподаватель"]   
+                      ];
+
+                    ul.reviews__list
+                      each item in reviews
+                        li.reviews__list-item
+                          p #{item[0]}
+                          .reviews__autor
+                            .reviews__photo
+                              .reviews__avatar
+                                - var imgUrl = item[1]
+                                +image(imgUrl, "reviews__avatar-img") 
+                            .reviews__info
+                              .reviews__name #{item[2]}
+                              .reviews__position #{item[3]}
+          
+          section.connection
+            .container.connection-section
+              .last-section__wrapper
+                h3.left__title.connection__title Связаться со мной
+                form.connection-feedback.feedback
+                  .feedback__row
+                    label.feedback__block.feedback__block--name
+                      .feedback__title Введите ваше имя
+                      input.feedback__input(type="text", name="name")
+                      .feedback__icon
+                        +icon("user", "feedback__icon-svg")
+                    label.feedback__block.feedback__block--email
+                      .feedback__title Введите ваш email
+                      input.feedback__input(type="text", name="email")
+                      .feedback__icon
+                        +icon("envelope", "feedback__icon-svg")
+                  .feedback__row
+                    label.feedback__block.feedback__block--message
+                      .feedback__title Сообщение к письму
+                      textarea(name="message", cols="", rows="2").feedback__input
+                      .feedback__icon
+                        +icon("message", "feedback__icon-svg")
+                  .feedback__row.feedback__btn
+                    button.feedback__button(type="submit") Отправить
 
         .triangles.reviews__triangles
             svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item
@@ -270,6 +259,7 @@ html(lang="en")
                   .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer__quote-author Martin Golding
 
+    include ./templates/entry.pug
  
     
 
