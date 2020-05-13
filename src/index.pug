@@ -29,6 +29,7 @@ html(lang="en")
           img(src=require("images/content/m7.png")).parallax-img
         .parallax-layer(data-speed="0.1")
           img(src=require("images/content/m7.png")).parallax-img
+          
 
 
         .wrapper-hero
@@ -114,40 +115,8 @@ html(lang="en")
       section.projects
         .container
           h3.projects__title.left__title Мои работы
-          .projects__content
-            .projects__left
-              .projects__slider
-                .projects__slider-item
-                  +image("content/1.jpg", "projects__photo")
-                  .projects__slider-links
-                    - var links = ["content/2.jpg", "content/3.jpg", "content/4.jpg", "content/5.jpg"];
-                      ul.projects__slider-list
-                        each link in links
-                          li.projects__slider-list-item
-                            - var url = link;                         
-                            a(href="")
-                              +image(url, "projects__slider-list-img")
-                              .projects__slider-img-cover
-                .projects__slider-btns
-                  a(href="").projects__slider-btns-link.projects__slider-prev <
-                  a(href="").projects__slider-btns-link.projects__slider-next >
-                                
-                    
-              .projects__figure 4
-
-            .projects__right
-              - var skills = ["HTML", "CSS", "JavaScript"];
-              .projects__skills
-                ul.projects__skills-list
-                  each skill in skills
-                    li.projects__skills-item #{skill}
-              .projects__right-title
-                h4 Сайт школы образования
-              .projects__text
-                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              .projects__link
-                a(href="") Посмотреть сайт
-                  +icon("link", "projects__link-icon")
+          .projects-wrapper
+            #works-slider-component
 
         
 
@@ -180,31 +149,19 @@ html(lang="en")
                 .reviews__top
                   h3.reviews__title.left__title Что обо мне говорят
                   .reviews__btns
-                    button.reviews-button.reviews__btns-prev 
-                    button.reviews-button.reviews__btns-next 
+                    button(@click="previous()").reviews-button.reviews__btns-prev
+                    button(@click="next()").reviews-button.reviews__btns-next 
                 .reviews__content
-                  .reviews__slider
-
-                    -
-                      var reviews = [
-                        ["Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
-                        "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
-                        ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
-                        "content/sab.png", "Владимир Сабанцев", "Преподаватель"]   
-                      ];
-
-                    ul.reviews__list
-                      each item in reviews
-                        li.reviews__list-item
-                          p #{item[0]}
-                          .reviews__autor
-                            .reviews__photo
-                              .reviews__avatar
-                                - var imgUrl = item[1]
-                                +image(imgUrl, "reviews__avatar-img") 
-                            .reviews__info
-                              .reviews__name #{item[2]}
-                              .reviews__position #{item[3]}
+                  -
+                    var reviews = [
+                      ["Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                      "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
+                      ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                      "content/sab.png", "Владимир Сабанцев", "Преподаватель"],
+                      ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+                      "content/sab.png", "Владимир Сабанцев", "Преподаватель"]    
+                    ];
+                  #reviews-flick-slider
           
           section.connection
             .container.connection-section

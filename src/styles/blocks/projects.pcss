@@ -149,29 +149,6 @@
         }
     }
 
-    &__figure{
-        position: absolute;
-        top: -45px;
-        right: 0;
-        font-size: 400px;
-        font-weight: 800;
-        color: #e6e6e6;
-        z-index: -1;
-
-        @include tablets{
-            right: -50px;
-            top: -150px;
-        }
-
-        @include tablPhone{
-            display: none;
-        }
-
-
-        @include phones{
-            display: none;
-        }
-    }
 }
 
 .projects__link-icon{
@@ -266,11 +243,12 @@
     }
 }
 
-.projects__slider-list-item--active .projects__slider-list-img{
+/*.projects__slider-list-item--active .projects__slider-list-img{
     outline: 3px solid #5500f2;
 }
+*/
 
-.projects__slider-list-item:last-child{
+.pactive{
     outline: 3px solid #5500f2;
 }
 
@@ -305,3 +283,34 @@
     }
     
 }
+
+.projects__left:before{
+    content: attr(data-slide);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    right: 0;
+    line-height: 1;
+    font-size: 400px;
+    font-weight: 800;
+    color: #e6e6e6;
+
+    @include tablPhone{
+        display: none;
+    }
+
+
+    @include phones{
+        display: none;
+    }
+}
+
+/*
+    &__figure{
+
+        @include tablets{
+            right: -50px;
+            top: -150px;
+        }  
+    }
+*/

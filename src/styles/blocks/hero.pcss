@@ -5,6 +5,16 @@
     padding-bottom: 260px;
     position: relative;
     overflow: hidden;
+
+    @include deskTabl{
+        background: url(../images/content/hero-bg-full.png) no-repeat;
+        background-position: 50% 0;
+    }
+
+    @include tablets{
+        background: url(../images/content/hero-bg-full.png) no-repeat;
+        background-position: 50% 0;
+    }
 }
 
 .wrapper-hero{
@@ -383,5 +393,14 @@
             left: 0;
             bottom: -400px;
         }
+    }
+
+
+    @include deskTabl{
+        display: none;
+    }
+
+    @include tablets{
+        display: none;
     }
 }

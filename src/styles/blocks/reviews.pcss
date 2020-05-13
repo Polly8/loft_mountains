@@ -10,6 +10,16 @@
         width: 100%;
     }
 
+    @include deskTabl{
+        background: url(../images/content/last-bg-full.png) no-repeat;
+        background-position: 50% 0;
+    }
+
+    @include tablets{
+        background: url(../images/content/last-bg-full.png) no-repeat;
+        background-position: 50% 0;
+    }
+
     @include tablPhone{
         padding-bottom: 100px;
     }
@@ -353,6 +363,7 @@
             bottom: 0;
             left: 50%;
             z-index: -6;
+
         }
     }
 
@@ -372,5 +383,13 @@
             left: 0;
             z-index: -9;
         }
+    }
+
+    @include deskTabl{
+        display: none;
+    }
+
+    @include tablets{
+        display: none;
     }
 }
