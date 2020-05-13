@@ -22,7 +22,7 @@ window.addEventListener("scroll", event =>{
 });
 
 
-//my version
+//my parallax
 
 const blayers = document.querySelectorAll(".b-parallax-img");
 
@@ -32,24 +32,43 @@ function moveLayersByMouse(mouseX, mouseY){
 
         var distance = blayer.dataset.distance;
 
-        const moveBlayerX = mouseX * distance / 10;
-        const moveBlayerY = mouseY * distance / 10;
+        const moveBlayerX = mouseX * distance / 35;
+        const moveBlayerY = mouseY * distance / 30;
         
-        const newPosition = moveBlayerX + "% " + moveBlayerY + "%";
+        const newPosition = moveBlayerX + "%, " + moveBlayerY + "%";
 
-        blayer.style.backgroundPosition = newPosition;
+        
+
+        blayer.style.transform = `translate(${moveBlayerX}%, ${moveBlayerY}% )`;
+
+        console.log(newPosition);
 
     })
 
 };
 
 
-window.addEventListener("mousemove", event =>{
+document.addEventListener("mousemove", event =>{
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
     moveLayersByMouse(mouseX, mouseY);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
