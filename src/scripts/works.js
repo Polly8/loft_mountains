@@ -58,15 +58,41 @@ new Vue({
         }
     },
 
+    watch: {
+        currentIndex(value){
+            
+            
+        }
+    },
+
     methods: {
         handleSlide(direction){
+            const maxLength = this.works.length - 1;
+            const nextBtn = document.querySelector(".projects__slider-prev");
+            const prevBtn = document.querySelector(".projects__slider-next");
             switch(direction){
                 case "next":
-                    this.currentIndex++;
+                    if(this.currentIndex < maxLength) this.currentIndex++;  
                     break;
                 case "prev":
-                    this.currentIndex--;
+                    if(this.currentIndex > 0) this.currentIndex--;
                     break;
+            }
+
+            if(this.currentIndex === maxLength){
+                nextBtn.classList.add("disabled");
+            }else{
+                if(nextBtn.classList.contains("disabled")){
+                    nextBtn.classList.remove("disabled");
+                }
+            }
+
+            if(this.currentIndex === 0){
+                prevBtn.classList.add("disabled");
+            }else{
+                if(prevBtn.classList.contains("disabled")){
+                    prevBtn.classList.remove("disabled");
+                }
             }
         },
 

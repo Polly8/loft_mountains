@@ -24,6 +24,7 @@ script(type="text/x-template")#works-slider-left
                 )
             btns(
                 @slide="$emit('slide', $event)"
+                :currentIndex = "currentIndex"
             )
 
 
@@ -43,7 +44,7 @@ script(type="text/x-template")#works-slider-thumbs
 script(type="text/x-template")#works-slider-btns
     .projects__slider-btns
         a(@click.prevent="$emit('slide', 'next')").projects__slider-btns-link.projects__slider-prev <
-        a(@click.prevent="$emit('slide', 'prev')").projects__slider-btns-link.projects__slider-next >
+        a(@click.prevent="$emit('slide', 'prev')").projects__slider-btns-link.projects__slider-next.disabled >
 
 
 script(type="text/x-template")#works-slider-right

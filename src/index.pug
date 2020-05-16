@@ -149,8 +149,8 @@ html(lang="en")
                 .reviews__top
                   h3.reviews__title.left__title Что обо мне говорят
                   .reviews__btns
-                    button(@click="previous()").reviews-button.reviews__btns-prev
-                    button(@click="next()").reviews-button.reviews__btns-next 
+                    button.reviews-button.reviews__btns-prev(@click="previous")
+                    button.reviews-button.reviews__btns-next(@click="next")
                 .reviews__content
                   -
                     var reviews = [
@@ -158,10 +158,24 @@ html(lang="en")
                       "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
                       ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
                       "content/sab.png", "Владимир Сабанцев", "Преподаватель"],
+                      ["Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+                      "content/koval.png", "Ковальчук Дмитрий", "Основатель LoftSchool"],
                       ["Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
-                      "content/sab.png", "Владимир Сабанцев", "Преподаватель"]    
+                      "content/sab.png", "Владимир Сабанцев", "Преподаватель"],    
                     ];
-                  #reviews-flick-slider
+
+                  flickity(ref="flickity" :options="flickityOptions").reviews__list
+                    each item in reviews
+                      .reviews__list-item
+                        p #{item[0]}
+                        .reviews__autor
+                          .reviews__photo
+                            .reviews__avatar
+                              - var imgUrl = item[1]
+                              +image(imgUrl, "reviews__avatar-img") 
+                          .reviews__info
+                            .reviews__name #{item[2]}
+                            .reviews__position #{item[3]}
           
           section.connection
             .container.connection-section
@@ -171,22 +185,32 @@ html(lang="en")
                   .feedback__row
                     label.feedback__block.feedback__block--name
                       .feedback__title Введите ваше имя
-                      input.feedback__input(type="text", name="name")
+                      input.feedback__input(type="text", name="name" required)
+                      .error.error-name
+                      .error-angle.error-angle-name
                       .feedback__icon
                         +icon("user", "feedback__icon-svg")
                     label.feedback__block.feedback__block--email
                       .feedback__title Введите ваш email
-                      input.feedback__input(type="text", name="email")
+                      input.feedback__input(type="email", name="email" required)
+                      .error.error-email
+                      .error-angle.error-angle-email
                       .feedback__icon
                         +icon("envelope", "feedback__icon-svg")
                   .feedback__row
                     label.feedback__block.feedback__block--message
                       .feedback__title Сообщение к письму
-                      textarea(name="message", cols="", rows="2").feedback__input
+                      textarea(name="message", cols="", rows="2" required).feedback__input
+                      .error.error-message
+                      .error-angle.error-angle-message
                       .feedback__icon
                         +icon("message", "feedback__icon-svg")
                   .feedback__row.feedback__btn
                     button.feedback__button(type="submit") Отправить
+            .modal-form
+              .modal-form__field
+                p.modal-form__text
+                button.modal-form__btn(type="button") Закрыть
 
         .triangles.reviews__triangles
             svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangles__item

@@ -32,8 +32,8 @@ function moveLayersByMouse(mouseX, mouseY){
 
         var distance = blayer.dataset.distance;
 
-        const moveBlayerX = mouseX * distance / 35;
-        const moveBlayerY = mouseY * distance / 30;
+        const moveBlayerX = mouseX * distance / 80;
+        const moveBlayerY = mouseY * distance / 40;
         
         const newPosition = moveBlayerX + "%, " + moveBlayerY + "%";
 

@@ -1,17 +1,4 @@
 
-script(type="text/x-template")#reviews-slider
 
-    .reviews__slider
 
-        flickity(ref="flickity" :options="flickityOptions").reviews__list.swiper
-            each item in reviews
-                .reviews__list-item.carousel-cell
-                    p #{item[0]}
-                    .reviews__autor
-                    .reviews__photo
-                        .reviews__avatar
-                        - var imgUrl = item[1]
-                        +image(imgUrl, "reviews__avatar-img") 
-                    .reviews__info
-                        .reviews__name #{item[2]}
-                        .reviews__position #{item[3]}
+    

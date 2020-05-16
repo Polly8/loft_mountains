@@ -101,25 +101,30 @@
     }
     
     &__list{
+        /*
         display: flex;
         flex-direction: row;
         font-weight: 600;
         color: #989eab;
-        width: 60%;
+        width: 60%;*/
 
         &-item {
+
+            margin: 0 75px 0 100px;
+
+            /*
             width: 50%;
             position: relative;
-            margin: 0 75px 0 100px;
+            
             display: flex;
-            flex-direction: column;
+            flex-direction: column;*/
 
             p{
                 margin-bottom: 30px;
             }
 
             &:last-child{
-                margin-right: 0;
+                /*margin-right: 0;*/
 
                 @include tablPhone{
                     display: none;
@@ -302,8 +307,6 @@
     .b-parallax-img{
         position: absolute;
         transform: translate(0, 0);
-        
-
     }
 
     &:nth-child(1){
@@ -392,4 +395,17 @@
     @include tablets{
         display: none;
     }
+}
+
+.flickity-enabled.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 60%;
+}
+
+.flickity-viewport{
+    height: 200px;
 }
