@@ -324,6 +324,7 @@
             object-fit: none;
             right: 0;
             z-index: -15;
+            max-width: 110%;
         }
     }
 
@@ -333,6 +334,7 @@
             object-fit: none;
             right: 0;
             z-index: -14;
+            max-width: 110%;
         }
     }
 
@@ -348,8 +350,8 @@
         .b-parallax-img{
             bottom: 200px;
             right: 0;
-            left: 0;
             z-index: -10;
+            max-width: 110%;
         }
     }
 
@@ -358,6 +360,7 @@
             bottom: 0;
             right: 0;
             z-index: -8;
+            max-width: 110%;
         }
     }
 
@@ -374,8 +377,8 @@
         .b-parallax-img{
             bottom: 0;
             right: 0;
-            left: 0;
             z-index: -9;
+            max-width: 110%;
         }
     }
 
@@ -383,8 +386,8 @@
         .b-parallax-img{
             bottom: 0;
             right: 0;
-            left: 0;
             z-index: -9;
+            max-width: 110%;
         }
     }
 
@@ -397,15 +400,29 @@
     }
 }
 
-.flickity-enabled.is-draggable {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.reviews__list-item{
+    width: 300px;
+}
+
+.flickity-enabled{
     width: 60%;
 }
 
+.flickity-slider{
+    width: 600px;
+}
+
 .flickity-viewport{
-    height: 200px;
+    min-height: 200px;
+}
+
+.disabled{
+    color: #afafaf;
+    border-color: currentColor;
+
+    &:hover{
+        color: #afafaf;
+        border-color: currentColor;
+        cursor: default;
+    }
 }

@@ -43,7 +43,7 @@ html(lang="en")
                 .header__socials
                   +socials("header", socialIcons)
                   .header__humburger
-                    a(href="").header__humburger-link
+                    a(href="#").header__humburger-link
 
               .hero__main
                 .author__info
@@ -149,8 +149,8 @@ html(lang="en")
                 .reviews__top
                   h3.reviews__title.left__title Что обо мне говорят
                   .reviews__btns
-                    button.reviews-button.reviews__btns-prev(@click="previous")
-                    button.reviews-button.reviews__btns-next(@click="next")
+                    button.reviews-button.reviews__btns-prev.disabled(@click="previous" :disabled="true")
+                    button.reviews-button.reviews__btns-next(@click="next" :disabled="false")
                 .reviews__content
                   -
                     var reviews = [
@@ -239,6 +239,14 @@ html(lang="en")
                 .footer__quote
                   .footer__quote-text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
                   .footer__quote-author Martin Golding
+
+    .mobile-menu.mobile-menu--closed
+      .mobile-wrapper
+        +navMobile(menu)
+        +socials("mobile", socialIcons)
+
+      .mobile-menu__close
+        +image("content/close-mobile-menu.png", "mobile-menu__pic")
 
     include ./templates/entry.pug
  

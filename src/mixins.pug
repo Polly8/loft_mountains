@@ -22,3 +22,11 @@ mixin nav(mod, array)
       li.menu__item
         a(href=`${item.link}`).menu__link #{item.title}
 
+
+mixin navMobile(array)
+  nav(class="mobile-menu__nav")
+    ul.mobile-menu__list
+      each item in array
+        li.mobile-menu__item
+          a(href=`${item.link}`).mobile-menu__link #{item.title}
+

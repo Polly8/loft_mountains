@@ -1,6 +1,7 @@
 
 const parallax = document.querySelector(".first-section");
 const layers = document.querySelectorAll(".parallax-layer");
+const buddaSection = document.querySelector(".last-section");
 
 
 function moveLayersByScrolling(wScroll){
@@ -48,7 +49,7 @@ function moveLayersByMouse(mouseX, mouseY){
 };
 
 
-document.addEventListener("mousemove", event =>{
+buddaSection.addEventListener("mousemove", event =>{
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 

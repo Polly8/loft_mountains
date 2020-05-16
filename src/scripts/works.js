@@ -80,18 +80,18 @@ new Vue({
             }
 
             if(this.currentIndex === maxLength){
-                nextBtn.classList.add("disabled");
+                nextBtn.classList.add("disabled-btn");
             }else{
-                if(nextBtn.classList.contains("disabled")){
-                    nextBtn.classList.remove("disabled");
+                if(nextBtn.classList.contains("disabled-btn")){
+                    nextBtn.classList.remove("disabled-btn");
                 }
             }
 
             if(this.currentIndex === 0){
-                prevBtn.classList.add("disabled");
+                prevBtn.classList.add("disabled-btn");
             }else{
-                if(prevBtn.classList.contains("disabled")){
-                    prevBtn.classList.remove("disabled");
+                if(prevBtn.classList.contains("disabled-btn")){
+                    prevBtn.classList.remove("disabled-btn");
                 }
             }
         },
