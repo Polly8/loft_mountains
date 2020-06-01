@@ -43,7 +43,7 @@ html(lang="en")
                 .header__socials
                   +socials("header", socialIcons)
                   .header__humburger
-                    a(href="#").header__humburger-link
+                    button.header__humburger-link
 
               .hero__main
                 .author__info
@@ -246,7 +246,7 @@ html(lang="en")
         +socials("mobile", socialIcons)
 
       .mobile-menu__close
-        +image("content/close-mobile-menu.png", "mobile-menu__pic")
+        button.mobile-menu__close-btn      
 
     include ./templates/entry.pug
  

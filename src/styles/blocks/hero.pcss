@@ -149,6 +149,10 @@
         @include deskTabl{
             padding: 36px 10px;
         }
+
+        @include tablets{
+            padding: 16px 10px;
+        }
         
     }
 
@@ -298,7 +302,7 @@
     }
 }
 
-.header__humburger a{
+.header__humburger-link{
     background: url(../images/content/humburger.png) no-repeat;
     background-size: cover;
     width: 26px;
@@ -306,7 +310,7 @@
     height: 22px;
 }
 
-.header__humburger a:hover{
+.header__humburger:hover{
 
     @include tablets{
         cursor: pointer;
@@ -404,3 +408,14 @@
         display: none;
     }
 }
+
+
+.mobile-menu__close-btn{
+    background: url(../images/content/close-mobile-menu.png) no-repeat;
+    background-size: cover;
+    width: 26px;
+    display: block;
+    height: 26px;
+}
+
+

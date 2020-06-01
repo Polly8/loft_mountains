@@ -125,7 +125,7 @@
             color: #586fd3;
             font-weight: 700;
             position: relative;
-            margin-left: 35px;
+            margin-left: 20px;
 
             &:hover{
                 text-decoration: underline;
@@ -189,6 +189,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
+        z-index: 1;
     
         &-item{
             width: 178px;
@@ -217,8 +218,8 @@
         display: flex;
         flex-direction: row;
         position: absolute;
-        bottom: -49px;
-        right: 0;
+        bottom: -47px;
+        right: 2px;
         color: #fff;
     
         &-link{
@@ -232,12 +233,12 @@
         }
 
         @include tablPhone{
-            right: -77px;
+            right: 0;
             bottom: 0;
         }
 
         @include phones{
-            right: -77px;
+            right: 0;
             bottom: 0;
         }
     }
@@ -324,3 +325,15 @@
         }  
     }
 */
+
+
+.projects__link:before{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(../images/content/link.png) no-repeat;
+    top: 0;
+
+
+}

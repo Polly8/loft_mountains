@@ -29,14 +29,14 @@ send.addEventListener("click", function(event){
 
         const xhr = new XMLHttpRequest();
         xhr.responseType = "json";
-        xhr.open("POST", "https://webdev-api.loftschool.com/sendmail");
+        xhr.open("POST", "/src/data/result.txt");
         xhr.send(formData);
 
         xhr.addEventListener("load", function(){
-
-            if(xhr.response.status < 400){
+           // console.log(xhr.response.status);
+            //if(xhr.response.status = 404){
                 modalText.textContent = "Сообщение отправлено";
-                modal.style.display = "block";
+                modal.style.display = "block";      
                 document.body.style.overflow = "hidden";
 
                 myForm.reset();
@@ -64,7 +64,7 @@ send.addEventListener("click", function(event){
                         document.body.style.overflow = "visible"; 
                     }
                 });
-            }
+            //}
         }); 
         
     }
