@@ -36,7 +36,11 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    width: 30%;
+    width: 460px;
+
+    @include tablPhone(){
+        width: 90%;
+    }
 }
 
 .entrance__title{
@@ -54,6 +58,11 @@
     height: 20px;
     border: none;
     background: url(../images/content/cancel.png) no-repeat;
+
+    @include tablPhone(){
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .entrance__form{
@@ -136,6 +145,10 @@
     &:hover{
         background: linear-gradient(to right, #9c00ff, #5900ff);
     }
+
+    @include tablPhone(){
+        padding: 30px 60px;
+    }
 }
 
 
@@ -165,6 +178,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @include tablPhone(){
+        flex-direction: column;
+        align-items: initial;
+    }
 }
 
 .admin-header__left{
@@ -181,11 +199,19 @@
 
 .admin-header__title{
     font-size: 14px;
+
+    @include tablPhone(){
+        display: none;
+    }
 }
 
 .admin-header__exit{
     text-decoration: underline;
     font-size: 16px;
+
+    @include tablPhone(){
+        padding-left: 64px;
+    }
 }
 
 .admin-header__name{
@@ -210,6 +236,10 @@
     &:hover{
         border-bottom: 3px solid #383bcf;
         color: #383bcf;
+    }
+
+    @include tablPhone(){
+        padding: 30px 15px;
     }
 }
 
@@ -236,12 +266,21 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 25px;
+
+    @include tablPhone(){
+        flex-direction: column;
+        align-items: initial;
+    }
 }
 
 .admin__top-title{
     margin-right: 85px;
     font-size: 21px;
     font-weight: 700;
+
+    @include tablPhone(){
+        margin-bottom: 30px;
+    }
 }
 
 .admin__top-add-link{
@@ -263,6 +302,10 @@
         justify-content: center;
         align-items: center;
     }
+
+    @include tablPhone(){
+        margin-left: 36px;
+    }
 } 
 
 /*about form*/
@@ -272,10 +315,19 @@
     padding: 30px 20px;
     margin: 30px 0;
     box-shadow: 0 0 10px #0000001f;
+
+    @include tablPhone(){
+        padding: 30px 8px;
+    }
 }
 
 .about-form{
     width: calc(50% - 30px);
+    min-width: 320px;
+
+    @include tablPhone(){
+        width: 95%;
+    }
 }
 
 .form__header{
@@ -312,16 +364,16 @@
 .form__btns-tick{
     background: url(../images/content/tick-admin.png) no-repeat;
     border: none;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     margin-right: 20px;
 }
 
 .form__btns-cross{
     background: url(../images/content/cross-admin.png) no-repeat;
     border: none;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
 .form__bottom{
@@ -411,11 +463,17 @@
     width: 60%;
     color: #414c63;
     padding-bottom: 10px;
+
+    @include tablPhone(){
+        margin-right: 10px;
+    }
 }
 
 .form__row-percent-wrapper{
-    width: 10%;
-    position: relative;
+    width: 44px;
+    position: relative;   
+    margin-right: 20px;
+
 
     &:after{
         content: "%";
@@ -436,7 +494,7 @@
 }
 
 .form__row-btns{
-    width: 13%;
+    width: 54px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -446,24 +504,24 @@
 .form__row-btns-edit{
     background: url(../images/content/pencil.png) no-repeat;
     border: none;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     margin-right: 20px;
 }
 
 .form__row-btns-delete{
     background: url(../images/content/trash.png) no-repeat;
     border: none;
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
 }
 
 
 .form__btns-edit{
     background: url(../images/content/pencil.png) no-repeat;
     border: none;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
 }
 
 .form__row.form__row--active .form__row-btns-edit{
@@ -516,11 +574,25 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 40px;
+
+    @include tablets(){
+        flex-direction: column;
+        width: 74%;
+        margin: 0 auto 40px;
+    }
+
+    @include tablPhone(){
+        width: 100%;
+    }
 }
 
 .works-add-form__content-left{
     flex: 1;
     padding: 0 10px;
+
+    @include tablets(){
+        margin-bottom: 55px;
+    }
 }
 
 .works-add-form__content-right{
@@ -597,6 +669,10 @@
     font-weight: 700;
     line-height: 30px;
     margin-top: 15px;
+
+    @include tablets(){
+        margin-top: 30px;
+    }
 }
 
 .works-add-form__tags{
@@ -623,13 +699,17 @@
     &:after{
         content: "";
         display: inline-block;
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
         background: url(../images/content/tag-cancel.png) no-repeat;
         position: relative;
         top: 50%;
         left: 8px;
         transform: translateY(20%);
+    }
+
+    @include tablPhone(){
+        padding: 8px 18px;
     }
 }
 
@@ -638,6 +718,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+
+    @include tablets(){
+        justify-content: center;
+    }
 }
 
 .works-add-form__btn--cancel {
@@ -670,9 +754,14 @@
     flex-direction: column;
     margin-bottom: 30px;
     box-shadow: 0 0 10px #0000001f;
+    min-width: 350px;
 
     &:last-child{
         margin-right: 0;
+    }
+
+    @include tablPhone(){
+        width: 100%;
     }
 }
 
@@ -692,6 +781,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include tablPhone(){
+        flex-direction: row;
+        padding: 40px 0 30px 0;
+    }
 }
 
 .works-section__add-link-circle{
@@ -711,6 +805,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    @include tablPhone(){
+        margin-right: 20px;
     }
 }
 
@@ -802,6 +900,11 @@
         right: -10px;
         transform: translateY(-50%);
 
+        @include tablPhone(){
+            width: 20px;
+            height: 20px;
+        }
+
     }
 }
 
@@ -818,6 +921,11 @@
         top: 50%;
         right: -10px;
         transform: translateY(-50%);
+
+        @include tablPhone(){
+            width: 20px;
+            height: 20px;
+        }
 
     }
 }
@@ -851,6 +959,10 @@
     flex-direction: row;
     justify-content: initial;
     margin-bottom: 40px;
+
+    @include tablPhone(){
+        flex-direction: column;
+    }
 }
 
 .reviews-add-form__content-left{
@@ -858,16 +970,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include tablets(){
+        margin-right: 30px;
+        width: initial;
+    }
+
+    @include tablPhone(){
+        margin-bottom: 45px;
+    }
 }
 
 .reviews-add-form__content-right{
     padding: 0 10px;
     width: 60%;
+
+    @include tablets(){
+        width: 100%;
+    }
 }
 
 .reviews-add-form__right-row{
     display: flex;
     flex-direction: row;
+
+    @include tablets(){
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
 }
 
 .reviews-add-form__right-row-text{
@@ -885,6 +1015,15 @@
     &:last-child{
         margin-bottom: 0;
         margin-right: 0;
+    }
+
+    @include tablets(){
+        margin-right: 0;
+        width: 70%;
+    }
+
+    @include tablPhone(){
+        width: 100%;
     }
 }
 
@@ -910,6 +1049,10 @@
     line-height: 30px;
     margin-top: 15px;
     margin-bottom: 30px;
+
+    @include tablPhone(){
+        margin-top: 30px;
+    }
 }
 
 .reviews-add-form__content-left-header__avatar{
@@ -935,6 +1078,10 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+
+    @include tablPhone(){
+        justify-content: center;
+    }
 }
 
 
@@ -954,9 +1101,14 @@
     margin-bottom: 30px;
     box-shadow: 0 0 10px #0000001f;
     padding: 0 30px;
+    min-width: 350px;
 
     &:last-child{
         margin-right: 0;
+    }
+
+    @include tablPhone(){
+        width: 100%;
     }
 }
 
@@ -977,6 +1129,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @include tablPhone(){
+        flex-direction: row;
+        padding: 40px 0 30px 0;
+    }
 }
 
 .reviews-section__add-link-circle{
@@ -996,6 +1153,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    @include tablPhone(){
+        margin-right: 30px;
     }
 }
 
@@ -1043,6 +1204,11 @@
         right: -10px;
         transform: translateY(-50%);
 
+        @include tablPhone(){
+            width: 20px;
+            height: 20px;
+        }
+
     }
 }
 
@@ -1059,6 +1225,11 @@
         top: 50%;
         right: -10px;
         transform: translateY(-50%);
+
+        @include tablPhone(){
+            width: 20px;
+            height: 20px;
+        }
 
     }
 }
@@ -1102,5 +1273,35 @@
 .notification{
     position: fixed;
     bottom: 0;
-    width: 380px;
+    padding: 18px 24px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+
+    &:after{
+        content: "";
+        display: inline-block;
+        position: relative;
+        width: 22px;
+        height: 22px;
+        background: url(../images/content/white-cross.png) no-repeat;
+        top: 50%;
+        transform: translateY(20%);
+        margin-left: 50px;
+    }
+}
+
+.notification--green{
+    background: #4bb133;
+    left: 5%;
+}
+
+.notification--yellow{
+    background: #b18333;
+    left: 35%;
+} 
+
+.notification--red{
+    background: #b13333;
+    left: 65%;
 }
